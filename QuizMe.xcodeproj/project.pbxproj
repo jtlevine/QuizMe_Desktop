@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		330D541B1C0E803900F22021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D541A1C0E803900F22021 /* AppDelegate.swift */; };
-		330D541D1C0E803900F22021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D541C1C0E803900F22021 /* ViewController.swift */; };
 		330D541F1C0E803900F22021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330D541E1C0E803900F22021 /* Assets.xcassets */; };
 		330D54221C0E803900F22021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D54201C0E803900F22021 /* Main.storyboard */; };
 		330D542D1C0E803A00F22021 /* QuizMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D542C1C0E803A00F22021 /* QuizMeTests.swift */; };
 		330D54381C0E803A00F22021 /* QuizMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D54371C0E803A00F22021 /* QuizMeUITests.swift */; };
+		330D544C1C0E872900F22021 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D544B1C0E872900F22021 /* LoginVC.swift */; };
+		335A43841C0EAEA200BC0E41 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A43831C0EAEA200BC0E41 /* Globals.swift */; };
+		335A43861C0EB41800BC0E41 /* CreateLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A43851C0EB41800BC0E41 /* CreateLoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +37,6 @@
 /* Begin PBXFileReference section */
 		330D54171C0E803900F22021 /* QuizMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D541A1C0E803900F22021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		330D541C1C0E803900F22021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		330D541E1C0E803900F22021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330D54211C0E803900F22021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		330D54231C0E803900F22021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		330D54331C0E803A00F22021 /* QuizMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D54371C0E803A00F22021 /* QuizMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMeUITests.swift; sourceTree = "<group>"; };
 		330D54391C0E803A00F22021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		330D544B1C0E872900F22021 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		335A43831C0EAEA200BC0E41 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		335A43851C0EB41800BC0E41 /* CreateLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,10 @@
 		330D54191C0E803900F22021 /* QuizMe */ = {
 			isa = PBXGroup;
 			children = (
+				335A43831C0EAEA200BC0E41 /* Globals.swift */,
+				330D544B1C0E872900F22021 /* LoginVC.swift */,
+				335A43851C0EB41800BC0E41 /* CreateLoginVC.swift */,
 				330D541A1C0E803900F22021 /* AppDelegate.swift */,
-				330D541C1C0E803900F22021 /* ViewController.swift */,
 				330D541E1C0E803900F22021 /* Assets.xcassets */,
 				330D54201C0E803900F22021 /* Main.storyboard */,
 				330D54231C0E803900F22021 /* Info.plist */,
@@ -252,8 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330D541D1C0E803900F22021 /* ViewController.swift in Sources */,
+				335A43861C0EB41800BC0E41 /* CreateLoginVC.swift in Sources */,
+				330D544C1C0E872900F22021 /* LoginVC.swift in Sources */,
 				330D541B1C0E803900F22021 /* AppDelegate.swift in Sources */,
+				335A43841C0EAEA200BC0E41 /* Globals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +483,7 @@
 				330D543E1C0E803A00F22021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		330D543F1C0E803A00F22021 /* Build configuration list for PBXNativeTarget "QuizMeTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +492,7 @@
 				330D54411C0E803A00F22021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		330D54421C0E803A00F22021 /* Build configuration list for PBXNativeTarget "QuizMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +501,7 @@
 				330D54441C0E803A00F22021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
