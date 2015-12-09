@@ -55,7 +55,9 @@ class LoginVC: NSViewController {
                                                     USERNAME = name
                                                     self.clearFields()
                                                     print("correct username/password")
-                                                    //self.dismissViewControllerAnimated(true, completion: nil)
+                                                    self.performSegueWithIdentifier("seg", sender: self)
+                                                    
+
                                                 }
                                                 if self.count == 0{
                                                     alertUser("Incorrect password")
