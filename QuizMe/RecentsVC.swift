@@ -37,7 +37,6 @@ class RecentsVC: NSViewController {
     func windowWillClose(){
         getQuestions()
         getSets()
-        tvTable.reloadData()
     }
     
     func isScheduled(qid:Int) -> Bool{
@@ -74,7 +73,6 @@ class RecentsVC: NSViewController {
      **/
     func setFetched(){
         fetched = false
-        print("thing")
     }
     override func viewWillAppear() {
         if USERNAME != "" {
@@ -218,8 +216,9 @@ class RecentsVC: NSViewController {
                             }
                         }
                     }
-                    
-                }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tvTable.reloadData()
+                    })                }
                 catch _ as NSError {}
             }
         }
