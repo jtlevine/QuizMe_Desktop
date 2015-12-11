@@ -701,6 +701,107 @@
             </objects>
             <point key="canvasLocation" x="631" y="1075"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="1iF-Fq-GH4">
+            <objects>
+                <windowController id="1o0-L2-V1Q" sceneMemberID="viewController">
+                    <window key="window" title="Create Set" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="SiU-8A-Ife">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="bd4-rX-cTC" kind="relationship" relationship="window.shadowedContentViewController" id="umm-yo-Zfs"/>
+                    </connections>
+                </windowController>
+                <customObject id="ybI-IV-05Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="1062"/>
+        </scene>
+        <!--Create SetVC-->
+        <scene sceneID="z0c-u1-d0Y">
+            <objects>
+                <viewController id="bd4-rX-cTC" customClass="CreateSetVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="BnM-h0-vz8">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPi-fM-Lqo">
+                                <rect key="frame" x="192" y="200" width="163" height="22"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JQ3-84-y3Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSR-zU-x8M">
+                                <rect key="frame" x="109" y="203" width="64" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Set Name:" id="UTh-oW-Axu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-8B-5nT">
+                                <rect key="frame" x="190" y="144" width="147" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="fVv-xI-dcH" id="avF-YZ-m5v">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="8Q1-1I-h3G">
+                                        <items>
+                                            <menuItem state="on" id="fVv-xI-dcH"/>
+                                            <menuItem title="Item 2" id="XgI-wW-fIr"/>
+                                            <menuItem title="Item 3" id="L9f-LE-8iq"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXj-yS-43D">
+                                <rect key="frame" x="136" y="149" width="37" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Topic:" id="3i2-0i-0xi">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-lt-G4L">
+                                <rect key="frame" x="200" y="76" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eL1-By-EVb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-B0-vhb">
+                                <rect key="frame" x="200" y="33" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gS2-1W-RtQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="btCancel" destination="DFf-B0-vhb" id="dOt-nf-e5X"/>
+                        <outlet property="btCreate" destination="Vjp-lt-G4L" id="BfO-gW-z6K"/>
+                        <outlet property="pvTopic" destination="tiQ-8B-5nT" id="q8f-xp-WNT"/>
+                        <outlet property="tfSetName" destination="JPi-fM-Lqo" id="Gd5-hT-Iec"/>
+                    </connections>
+                </viewController>
+                <customObject id="xVb-eL-kwg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2604" y="1037"/>
+        </scene>
         <!--CreateVC-->
         <scene sceneID="G3e-m8-Utm">
             <objects>
@@ -736,6 +837,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="btCreateNewSet_onClick:" target="MlH-tU-AFE" id="yI1-Ux-dM9"/>
+                                    <segue destination="1o0-L2-V1Q" kind="modal" id="hAg-Xo-Mab"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-V5-WyD">
@@ -770,7 +872,7 @@
                                 </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKp-Yb-cpc">
-                                <rect key="frame" x="206" y="58" width="76" height="26"/>
+                                <rect key="frame" x="185" y="58" width="112" height="26"/>
                                 <animations/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sVn-cf-mly" id="VUO-1L-IJY">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>

@@ -18,6 +18,7 @@
 		335742591C1507C3001A553E /* RecentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335742581C1507C3001A553E /* RecentsVC.swift */; };
 		335A43841C0EAEA200BC0E41 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A43831C0EAEA200BC0E41 /* Globals.swift */; };
 		335A43861C0EB41800BC0E41 /* CreateLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A43851C0EB41800BC0E41 /* CreateLoginVC.swift */; };
+		339416941C1B6E8E00962E36 /* CreateSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339416931C1B6E8E00962E36 /* CreateSetVC.swift */; };
 		33A802BD1C162C4700FD3F00 /* BoolWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802BC1C162C4700FD3F00 /* BoolWrapper.swift */; };
 		33A802BF1C162E8E00FD3F00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802BE1C162E8E00FD3F00 /* Question.swift */; };
 		33A802C11C16303900FD3F00 /* QmSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802C01C16303900FD3F00 /* QmSet.swift */; };
@@ -59,6 +60,7 @@
 		335742581C1507C3001A553E /* RecentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsVC.swift; sourceTree = "<group>"; };
 		335A43831C0EAEA200BC0E41 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		335A43851C0EB41800BC0E41 /* CreateLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLoginVC.swift; sourceTree = "<group>"; };
+		339416931C1B6E8E00962E36 /* CreateSetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSetVC.swift; sourceTree = "<group>"; };
 		33A802BC1C162C4700FD3F00 /* BoolWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolWrapper.swift; sourceTree = "<group>"; };
 		33A802BE1C162E8E00FD3F00 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		33A802C01C16303900FD3F00 /* QmSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QmSet.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3321624B1C152EF70073049B /* MyCustomSwiftSegue.swift */,
 				335A43831C0EAEA200BC0E41 /* Globals.swift */,
 				33BAE7BA1C17BA98005B14EF /* CreateVC.swift */,
+				339416931C1B6E8E00962E36 /* CreateSetVC.swift */,
 				330D544B1C0E872900F22021 /* LoginVC.swift */,
 				335742581C1507C3001A553E /* RecentsVC.swift */,
 				33A802BE1C162E8E00FD3F00 /* Question.swift */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				335742591C1507C3001A553E /* RecentsVC.swift in Sources */,
+				339416941C1B6E8E00962E36 /* CreateSetVC.swift in Sources */,
 				33A802BD1C162C4700FD3F00 /* BoolWrapper.swift in Sources */,
 				33A802C11C16303900FD3F00 /* QmSet.swift in Sources */,
 				335A43861C0EB41800BC0E41 /* CreateLoginVC.swift in Sources */,
