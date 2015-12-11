@@ -21,6 +21,7 @@
 		33A802BD1C162C4700FD3F00 /* BoolWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802BC1C162C4700FD3F00 /* BoolWrapper.swift */; };
 		33A802BF1C162E8E00FD3F00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802BE1C162E8E00FD3F00 /* Question.swift */; };
 		33A802C11C16303900FD3F00 /* QmSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A802C01C16303900FD3F00 /* QmSet.swift */; };
+		33BAE7BB1C17BA98005B14EF /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BAE7BA1C17BA98005B14EF /* CreateVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		33A802BC1C162C4700FD3F00 /* BoolWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolWrapper.swift; sourceTree = "<group>"; };
 		33A802BE1C162E8E00FD3F00 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		33A802C01C16303900FD3F00 /* QmSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QmSet.swift; sourceTree = "<group>"; };
+		33BAE7BA1C17BA98005B14EF /* CreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				3321624A1C152EF70073049B /* MyCustomSwiftAnimator.swift */,
 				3321624B1C152EF70073049B /* MyCustomSwiftSegue.swift */,
 				335A43831C0EAEA200BC0E41 /* Globals.swift */,
+				33BAE7BA1C17BA98005B14EF /* CreateVC.swift */,
 				330D544B1C0E872900F22021 /* LoginVC.swift */,
 				335742581C1507C3001A553E /* RecentsVC.swift */,
 				33A802BE1C162E8E00FD3F00 /* Question.swift */,
@@ -283,6 +286,7 @@
 				33A802BF1C162E8E00FD3F00 /* Question.swift in Sources */,
 				330D544C1C0E872900F22021 /* LoginVC.swift in Sources */,
 				3321624C1C152EF70073049B /* MyCustomSwiftAnimator.swift in Sources */,
+				33BAE7BB1C17BA98005B14EF /* CreateVC.swift in Sources */,
 				330D541B1C0E803900F22021 /* AppDelegate.swift in Sources */,
 				3321624D1C152EF70073049B /* MyCustomSwiftSegue.swift in Sources */,
 				335A43841C0EAEA200BC0E41 /* Globals.swift in Sources */,

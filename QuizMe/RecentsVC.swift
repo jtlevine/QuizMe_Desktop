@@ -23,6 +23,7 @@ class RecentsVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setFetched", name: "setFetchedKey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "windowWillClose", name: "NSWindowWillCloseNotification", object: nil)
         if USERNAME == ""{
             /*
             Causes 2 warnings: "Presenting view controllers on detached view controllers is discouraged" and
@@ -31,6 +32,12 @@ class RecentsVC: NSViewController {
             */
             //performSegueWithIdentifier("logIn", sender: self)
         }
+    }
+    
+    func windowWillClose(){
+        getQuestions()
+        getSets()
+        tvTable.reloadData()
     }
     
     func isScheduled(qid:Int) -> Bool{
@@ -67,6 +74,7 @@ class RecentsVC: NSViewController {
      **/
     func setFetched(){
         fetched = false
+        print("thing")
     }
     override func viewWillAppear() {
         if USERNAME != "" {
@@ -185,6 +193,7 @@ class RecentsVC: NSViewController {
      Fetches user defined sets from server
      **/
     func getSets(){
+        sets.removeAll()
         let send_this = "uid=\(UID)"
         let request = getRequest(send_this, urlString: GET_SETS_PHP)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -228,7 +237,7 @@ class RecentsVC: NSViewController {
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var cell: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
+        let cell: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
         if scTypeDisplayed.selectedSegment == 0{ //if questions selected
             cell.textField!.stringValue = "Q:      " + questions[row].qText
         }
@@ -237,6 +246,7 @@ class RecentsVC: NSViewController {
         }
         return cell
     }
+    
     @IBAction func scTypeDisplayed_valueChanged(sender: NSSegmentedControl) {
         tvTable.reloadData()
     }
@@ -244,7 +254,9 @@ class RecentsVC: NSViewController {
     @IBAction func delete_clicked(sender: NSButton) {
         if(scTypeDisplayed.selectedSegment == 0){
             let index = tvTable.selectedRow
-            deleteQuestion(questions[index].qid,index: index)
+            if(index >= 0){
+                deleteQuestion(questions[index].qid,index: index)
+            }
         }
     }
     

@@ -55,6 +55,15 @@ func getRequest(requestString : String, urlString : String) -> NSMutableURLReque
     request.HTTPBody = requestString.dataUsingEncoding(NSUTF8StringEncoding)
     return request
 }
+
+/**
+ FormatStringRemoveQuotes
+ **/
+func formatStringRemoveQuotes(string:String) ->String{
+    
+    return string.stringByReplacingOccurrencesOfString("'", withString: "")
+}
+
 /**
  AlertUser
  displays an alertbox showing passed in message with an "ok" button

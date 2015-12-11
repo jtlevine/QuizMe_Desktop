@@ -669,8 +669,8 @@
         <scene sceneID="MmF-MG-zoq">
             <objects>
                 <windowController id="oNz-Gd-Tlc" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="v5L-cY-qjX">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Create Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="v5L-cY-qjX">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
@@ -682,6 +682,123 @@
                 <customObject id="2G4-9w-eFl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="634" y="722"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="1OY-Oh-b3W">
+            <objects>
+                <windowController id="NHV-jI-cax" sceneMemberID="viewController">
+                    <window key="window" title="Create Question" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="BK4-OD-X3V">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="290" y="257" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1902" height="919"/>
+                    </window>
+                    <connections>
+                        <segue destination="MlH-tU-AFE" kind="relationship" relationship="window.shadowedContentViewController" id="uKu-tH-V3A"/>
+                    </connections>
+                </windowController>
+                <customObject id="I4f-MY-DoS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="631" y="1075"/>
+        </scene>
+        <!--CreateVC-->
+        <scene sceneID="G3e-m8-Utm">
+            <objects>
+                <viewController id="MlH-tU-AFE" customClass="CreateVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="EYM-Ua-dUD">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-2S-6DC">
+                                <rect key="frame" x="174" y="229" width="132" height="21"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter Question:" id="IfE-EY-4Xd">
+                                    <font key="font" metaFont="systemBold" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RhN-0o-4fT">
+                                <rect key="frame" x="20" y="146" width="440" height="80"/>
+                                <animations/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Rve-EG-POU">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPl-Vd-WsD">
+                                <rect key="frame" x="179" y="13" width="122" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Create New Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0LO-Mj-lQC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btCreateNewSet_onClick:" target="MlH-tU-AFE" id="yI1-Ux-dM9"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-V5-WyD">
+                                <rect key="frame" x="206" y="87" width="71" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Part of set:" id="Fyu-co-O3M">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vve-by-zUX">
+                                <rect key="frame" x="200" y="110" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Enter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hYZ-zb-rue">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btCreate_onClick:" target="MlH-tU-AFE" id="TPa-4z-v5l"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZp-zu-ESm">
+                                <rect key="frame" x="335" y="110" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Go Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6kl-cf-ofO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btGoBack_onClick:" target="MlH-tU-AFE" id="Cce-QK-VDO"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKp-Yb-cpc">
+                                <rect key="frame" x="206" y="58" width="76" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sVn-cf-mly" id="VUO-1L-IJY">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="w0r-Gp-NsD">
+                                        <items>
+                                            <menuItem state="on" id="sVn-cf-mly"/>
+                                            <menuItem title="Item 2" id="h7s-fp-ucl"/>
+                                            <menuItem title="Item 3" id="ztO-OR-Lqj"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="btCreateNewSet" destination="FPl-Vd-WsD" id="FoD-3a-0qm"/>
+                        <outlet property="btEnter" destination="vve-by-zUX" id="7pd-Qi-dWA"/>
+                        <outlet property="btGoBack" destination="bZp-zu-ESm" id="nTZ-R6-Egw"/>
+                        <outlet property="lbLabel" destination="x6h-2S-6DC" id="bJd-2F-hqi"/>
+                        <outlet property="pvSet" destination="iKp-Yb-cpc" id="JzX-iG-u1c"/>
+                        <outlet property="tvTextView" destination="RhN-0o-4fT" id="SnQ-DC-X9p"/>
+                    </connections>
+                </viewController>
+                <customObject id="dn5-aP-zbb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="1050"/>
         </scene>
         <!--Create LoginVC-->
         <scene sceneID="1K1-KQ-UF4">
@@ -853,10 +970,32 @@ Gw
                                     <action selector="scTypeDisplayed_valueChanged:" target="Jlc-l2-veH" id="VaR-dH-M05"/>
                                 </connections>
                             </segmentedControl>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-JH-UNR">
+                                <rect key="frame" x="200" y="229" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sBb-CZ-eZq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="NHV-jI-cax" kind="modal" id="aU2-i7-zYK"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-Ik-2QW">
+                                <rect key="frame" x="14" y="229" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4z8-Yl-67y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="delete_clicked:" target="Jlc-l2-veH" id="yXA-qM-2ie"/>
+                                </connections>
+                            </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkK-TN-RFJ">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="220"/>
                                 <clipView key="contentView" ambiguous="YES" id="tzX-FD-Dj4">
-                                    <rect key="frame" x="1.5" y="1" width="478" height="218"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="218"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="PhR-gZ-MX0">
@@ -912,7 +1051,7 @@ Gw
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <animations/>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="E2Q-ki-kqJ">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="E2Q-ki-kqJ">
                                     <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -923,25 +1062,6 @@ Gw
                                     <animations/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-JH-UNR">
-                                <rect key="frame" x="200" y="229" width="81" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sBb-CZ-eZq">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-Ik-2QW">
-                                <rect key="frame" x="14" y="229" width="81" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4z8-Yl-67y">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="delete_clicked:" target="Jlc-l2-veH" id="yXA-qM-2ie"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                     </view>
