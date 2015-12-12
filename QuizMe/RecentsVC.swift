@@ -186,6 +186,29 @@ class RecentsVC: NSViewController {
         }
         task.resume()
     }
+    
+    /**
+     DeleteSet
+     Deletes set from server
+     **/
+    func deleteSet(pid:Int,index:Int){
+        let send_this = "pid=\(pid)"
+        let request = getRequest(send_this, urlString: DELETE_SET_PHP)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            (data, response, error) in
+            if error != nil{
+                //alertUser()
+                return
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.sets.removeAtIndex(index)
+                self.tvTable.reloadData()
+            })
+            
+        }
+        task.resume()
+    }
+
     /**
      GetSets
      Fetches user defined sets from server
@@ -251,10 +274,15 @@ class RecentsVC: NSViewController {
     }
     
     @IBAction func delete_clicked(sender: NSButton) {
+        let index = tvTable.selectedRow
         if(scTypeDisplayed.selectedSegment == 0){
-            let index = tvTable.selectedRow
             if(index >= 0){
                 deleteQuestion(questions[index].qid,index: index)
+            }
+        }
+        else{
+            if(index >= 0){
+                deleteSet(sets[index].pid,index: index)
             }
         }
     }

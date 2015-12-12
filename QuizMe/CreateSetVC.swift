@@ -14,23 +14,27 @@ class CreateSetVC: NSViewController {
     @IBOutlet weak var btCreate: NSButton!
     @IBOutlet weak var tfSetName: NSTextField!
     @IBOutlet weak var pvTopic: NSPopUpButton!
+    @IBOutlet weak var swchPrivate: NSButton!
     
     let topics = ["None", "Biology","Chemistry","Computer Science", "Entertainment", "Earth Science", "Geography", "History", "Language","Literature","Miscellaneous", "Physics", "Sports"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pvTopic.removeAllItems()
         pvTopic.addItemsWithTitles(topics)
     }
     
-    /*func createSet(){
+    func createSet(){
         var priv : Int
-        if swchPrivate.on{
+        if (swchPrivate.state == 1){
+            print("private")
             priv = 1
         }else{
             priv = 0
+            print("not private")
         }
-        let topicName = topics[pvTopic.selectedRowInComponent(0)]
-        let send_this = "uid=\(UID)&name='\(tfSetNme.text!)'&topic='\(topicName)'&private=\(priv)"
+        let topicName = topics[pvTopic.indexOfSelectedItem]
+        let send_this = "uid=\(UID)&name='\(tfSetName.stringValue)'&topic='\(topicName)'&private=\(priv)"
         let request = getRequest(send_this, urlString: CREATE_SET_PHP)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
             (data, response, error) in  //all this happens once request has been completed, in another queue
@@ -39,13 +43,19 @@ class CreateSetVC: NSViewController {
                 return
             }
             dispatch_async(dispatch_get_main_queue(), {
-                alertUser("Set created",you:self)
+                alertUser("Set created")
                 NSNotificationCenter.defaultCenter().postNotificationName("refetchSetsKey", object: self)
-                NSNotificationCenter.defaultCenter().postNotificationName(notification_key, object: self)
+                self.view.window?.performClose(self)
             })
             
         }
         task.resume()
-    }*/
+    }
+    @IBAction func btCreate_onClick(sender: NSButton) {
+        createSet()
+    }
     
+    @IBAction func btCancel_onClick(sender: NSButton) {
+        self.view.window?.performClose(self)
+    }
 }

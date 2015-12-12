@@ -23,7 +23,7 @@ class CreateVC: NSViewController {
     @IBOutlet weak var btGoBack: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reFetchSets", name: "refetchSetsKey", object: nil)
     }
     override func viewWillAppear() {
         if fetched == false{
@@ -86,6 +86,7 @@ class CreateVC: NSViewController {
             dispatch_async(dispatch_get_main_queue(), {
                 alertUser("Question created!")
                 NSNotificationCenter.defaultCenter().postNotificationName("setFetchedKey", object: self)
+                self.view.window?.performClose(self)
             })
         }
         task.resume()
