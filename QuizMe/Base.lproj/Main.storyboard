@@ -825,15 +825,6 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-2S-6DC">
-                                <rect key="frame" x="174" y="229" width="132" height="21"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter Question:" id="IfE-EY-4Xd">
-                                    <font key="font" metaFont="systemBold" size="17"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RhN-0o-4fT">
                                 <rect key="frame" x="20" y="146" width="440" height="80"/>
                                 <animations/>
@@ -901,6 +892,15 @@ Gw
                                     <action selector="btGoBack_onClick:" target="MlH-tU-AFE" id="Cce-QK-VDO"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-2S-6DC">
+                                <rect key="frame" x="174" y="229" width="132" height="21"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter Question:" id="IfE-EY-4Xd">
+                                    <font key="font" metaFont="systemBold" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <animations/>
                     </view>
@@ -1148,6 +1148,9 @@ Gw
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <segue destination="vNm-cO-aj2" kind="custom" customClass="MyCustomSwiftSegue" customModule="QuizMe" customModuleProvider="target" id="Q7R-DK-VtR"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <animations/>
@@ -1192,6 +1195,72 @@ Gw
                 <customObject id="7MV-cR-e3a" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="17" y="1067"/>
+        </scene>
+        <!--Selected CellVC-->
+        <scene sceneID="NPD-tT-t8d">
+            <objects>
+                <viewController id="vNm-cO-aj2" customClass="SelectedCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m78-75-JrY">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-qa-FnR">
+                                <rect key="frame" x="90" y="121" width="301" height="90"/>
+                                <animations/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6sf-eA-Jtn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3X-nv-ThW">
+                                <rect key="frame" x="198" y="222" width="84" height="21"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Question:" id="gKV-bC-m6I">
+                                    <font key="font" metaFont="systemBold" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4E-R4-mYy">
+                                <rect key="frame" x="200" y="25" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ckQ-kK-KEJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-lw-IbK">
+                                <rect key="frame" x="272" y="68" width="115" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Save Changes" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k3T-pi-rGw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-vX-KBG">
+                                <rect key="frame" x="122" y="68" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Flip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OXZ-Qd-hma">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="btBack" destination="m4E-R4-mYy" id="K0J-d7-4Jn"/>
+                        <outlet property="btFlip" destination="bC9-vX-KBG" id="h97-7E-jDi"/>
+                        <outlet property="btSaveChanges" destination="2EY-lw-IbK" id="cIC-mQ-9iG"/>
+                        <outlet property="lbLabel" destination="s3X-nv-ThW" id="vOc-6t-AK5"/>
+                        <outlet property="tvText" destination="dt2-qa-FnR" id="Vld-16-Bdc"/>
+                        <outlet property="tvTextField" destination="dt2-qa-FnR" id="iCH-XQ-hOJ"/>
+                    </connections>
+                </viewController>
+                <customObject id="99l-gA-vWF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="1528"/>
         </scene>
     </scenes>
 </document>
