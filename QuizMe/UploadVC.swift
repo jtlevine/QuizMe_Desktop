@@ -61,7 +61,7 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         
     }
     func submitQuestion(index: Int){
-        let qText = question_array[index].qText
+        let qText = formatStringRemoveQuotes(question_array[index].qText)
         let pid = sets[pvSet.indexOfSelectedItem].pid
         let send_this = "question='\(qText)'&answer='\(question_array[index].aText)'&uid=\(UID)&setID=\(pid)"
         let request = getRequest(send_this, urlString: CREATE_QUESTION_PHP)
