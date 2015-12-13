@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9046"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -1008,7 +1008,7 @@ Gw
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-xf-sfj">
                                 <rect key="frame" x="85" y="25" width="597" height="271"/>
                                 <clipView key="contentView" ambiguous="YES" id="koj-Rm-KFS">
-                                    <rect key="frame" x="1" y="23" width="595" height="247"/>
+                                    <rect key="frame" x="1" y="0.0" width="595" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" headerView="uCx-bm-zMD" viewBased="YES" id="74n-Ro-qgc">
@@ -1099,11 +1099,11 @@ Gw
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="K4E-PY-9c2">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9Jb-o6-bLb">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="9Jb-o6-bLb">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -1271,7 +1271,6 @@ Gw
                         <outlet property="login" destination="xBa-CK-TRe" id="Bte-lI-QaS"/>
                         <outlet property="password" destination="2Gi-z9-nul" id="e76-iq-Mf5"/>
                         <outlet property="username" destination="BNe-30-PiN" id="NSg-gV-dZX"/>
-                        <segue destination="Jlc-l2-veH" kind="custom" identifier="seg" customClass="MyCustomSwiftSegue" customModule="QuizMe" customModuleProvider="target" id="UxR-2F-3Ix"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1281,7 +1280,7 @@ Gw
         <!--RecentsVC-->
         <scene sceneID="LEA-VT-zXT">
             <objects>
-                <viewController id="Jlc-l2-veH" customClass="RecentsVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Recents" id="Jlc-l2-veH" customClass="RecentsVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" identifier="next" id="EPi-oN-owM">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1309,17 +1308,6 @@ Gw
                                 </buttonCell>
                                 <connections>
                                     <segue destination="NHV-jI-cax" kind="modal" id="aU2-i7-zYK"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-Ik-2QW">
-                                <rect key="frame" x="14" y="229" width="81" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4z8-Yl-67y">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="delete_clicked:" target="Jlc-l2-veH" id="yXA-qM-2ie"/>
                                 </connections>
                             </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkK-TN-RFJ">
@@ -1361,9 +1349,6 @@ Gw
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
-                                                                    <connections>
-                                                                        <segue destination="vNm-cO-aj2" kind="custom" customClass="MyCustomSwiftSegue" customModule="QuizMe" customModuleProvider="target" id="Q7R-DK-VtR"/>
-                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <animations/>
@@ -1375,6 +1360,7 @@ Gw
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action trigger="doubleAction" selector="tvTable_onDoubleClick:" target="Jlc-l2-veH" id="S3M-9K-siP"/>
                                                 <outlet property="dataSource" destination="Jlc-l2-veH" id="eyK-SE-8Pq"/>
                                                 <outlet property="delegate" destination="Jlc-l2-veH" id="Tiv-V6-Lq1"/>
                                             </connections>
@@ -1385,7 +1371,7 @@ Gw
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="E2Q-ki-kqJ">
-                                    <rect key="frame" x="1" y="203" width="478" height="16"/>
+                                    <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -1395,6 +1381,17 @@ Gw
                                     <animations/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-Ik-2QW">
+                                <rect key="frame" x="14" y="229" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4z8-Yl-67y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="delete_clicked:" target="Jlc-l2-veH" id="yXA-qM-2ie"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                     </view>
@@ -1409,10 +1406,107 @@ Gw
             </objects>
             <point key="canvasLocation" x="17" y="1067"/>
         </scene>
+        <!--Selected Set CellVC-->
+        <scene sceneID="iDY-du-caM">
+            <objects>
+                <viewController id="fv1-0r-z6t" customClass="SelectedSetCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3Ia-Jz-Xzg">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJX-IZ-SZU">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="220"/>
+                                <clipView key="contentView" ambiguous="YES" id="9Kq-8w-KVh">
+                                    <rect key="frame" x="1" y="1" width="478" height="218"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="cvK-vC-jQQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="218"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="475" minWidth="40" maxWidth="1000" id="cRJ-LU-2IZ">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="g2n-tB-RBW">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="VzY-P2-ALN">
+                                                            <rect key="frame" x="1" y="1" width="475" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mOq-Ay-LDN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <animations/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="J1Z-hx-vLL">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <connections>
+                                                                <outlet property="textField" destination="mOq-Ay-LDN" id="dDv-GD-Xw7"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <animations/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Kbe-nq-buB">
+                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="OBj-7S-bEZ">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eum-aN-zRd" customClass="Selected">
+                                <rect key="frame" x="14" y="229" width="81" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OKa-U1-Jid">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btBack_onClick:" target="fv1-0r-z6t" id="lUj-mK-cBH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="btBack" destination="Eum-aN-zRd" id="QD5-Vu-L2W"/>
+                        <outlet property="tvTable" destination="cvK-vC-jQQ" id="2rW-BE-iWc"/>
+                    </connections>
+                </viewController>
+                <customObject id="JB6-sc-REY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="1401"/>
+        </scene>
         <!--Selected CellVC-->
         <scene sceneID="NPD-tT-t8d">
             <objects>
-                <viewController id="vNm-cO-aj2" customClass="SelectedCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedCell" id="vNm-cO-aj2" customClass="SelectedCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m78-75-JrY">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1442,22 +1536,20 @@ Gw
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-lw-IbK">
-                                <rect key="frame" x="272" y="68" width="115" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Save Changes" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k3T-pi-rGw">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="btBack_onClick:" target="vNm-cO-aj2" id="HIt-z3-mKO"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-vX-KBG">
-                                <rect key="frame" x="122" y="68" width="81" height="32"/>
+                                <rect key="frame" x="200" y="67" width="81" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Flip" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OXZ-Qd-hma">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="btFlip_onClick:" target="vNm-cO-aj2" id="L61-3W-V1b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -1465,15 +1557,13 @@ Gw
                     <connections>
                         <outlet property="btBack" destination="m4E-R4-mYy" id="K0J-d7-4Jn"/>
                         <outlet property="btFlip" destination="bC9-vX-KBG" id="h97-7E-jDi"/>
-                        <outlet property="btSaveChanges" destination="2EY-lw-IbK" id="cIC-mQ-9iG"/>
                         <outlet property="lbLabel" destination="s3X-nv-ThW" id="vOc-6t-AK5"/>
                         <outlet property="tvText" destination="dt2-qa-FnR" id="Vld-16-Bdc"/>
-                        <outlet property="tvTextField" destination="dt2-qa-FnR" id="iCH-XQ-hOJ"/>
                     </connections>
                 </viewController>
                 <customObject id="99l-gA-vWF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="1528"/>
+            <point key="canvasLocation" x="17" y="1754"/>
         </scene>
     </scenes>
 </document>

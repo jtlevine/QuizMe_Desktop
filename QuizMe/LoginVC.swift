@@ -55,9 +55,8 @@ class LoginVC: NSViewController {
                                                     USERNAME = name
                                                     self.clearFields()
                                                     print("correct username/password")
-                                                    self.performSegueWithIdentifier("seg", sender: self)
-                                                    
-
+                                                    let vc : NSViewController = (self.storyboard?.instantiateControllerWithIdentifier("Recents"))! as! NSViewController
+                                                    self.view.window?.contentViewController = vc
                                                 }
                                                 if self.count == 0{
                                                     alertUser("Incorrect password")

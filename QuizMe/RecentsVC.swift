@@ -258,6 +258,23 @@ class RecentsVC: NSViewController {
         }
     }
     
+    
+    @IBAction func tvTable_onDoubleClick(sender: NSTableView) {
+        let index = tvTable.selectedRow
+        if(index >= 0){
+            if(scTypeDisplayed.selectedSegment == 0){
+                print("question number ", index, "clicked")
+                let vc : SelectedCellVC = (self.storyboard?.instantiateControllerWithIdentifier("SelectedCell"))! as! SelectedCellVC
+                vc.question = questions[index]
+                self.view.window?.contentViewController = vc
+            }
+            else{
+                
+            }
+        }
+    }
+
+    
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
         if scTypeDisplayed.selectedSegment == 0{ //if questions selected

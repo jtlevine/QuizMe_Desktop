@@ -10,6 +10,12 @@ import Cocoa
 
 class SelectedCellVC: NSViewController {
 
+    var question = Question()
+    var questionTemp = ""
+    var answerTemp = ""
+    var state = "q"
+    var inSet : BoolWrapper?
+    
     @IBOutlet weak var btFlip: NSButton!
     @IBOutlet weak var btBack: NSButton!
     @IBOutlet weak var btSaveChanges: NSButton!
@@ -18,7 +24,28 @@ class SelectedCellVC: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        questionTemp = question.qText
+        answerTemp = question.aText
+        tvText.stringValue = question.qText
     }
     
+    @IBAction func btFlip_onClick(sender: NSButton) {
+        if state == "q"{
+            questionTemp = tvText.stringValue
+            tvText.stringValue = question.aText
+            state = "a"
+            lbLabel.stringValue = "Answer:"
+        }
+        else{
+            answerTemp = tvText.stringValue
+            tvText.stringValue = question.qText
+            state = "q"
+            lbLabel.stringValue = "Question:"
+        }
+    }
+    
+    @IBAction func btBack_onClick(sender: NSButton) {
+        let vc : NSViewController = (self.storyboard?.instantiateControllerWithIdentifier("Recents"))! as! NSViewController
+        self.view.window?.contentViewController = vc
+    }
 }

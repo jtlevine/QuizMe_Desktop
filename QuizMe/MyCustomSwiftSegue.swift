@@ -15,7 +15,6 @@ class MyCustomSwiftSegue: NSStoryboardSegue {
         let sourceVC  = self.sourceController as! NSViewController
         let destVC = self.destinationController as! NSViewController
         sourceVC.presentViewController(destVC, animator: animator)
-        sourceVC.view = destVC.view
     }
     
 }
