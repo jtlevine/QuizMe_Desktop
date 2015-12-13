@@ -1008,11 +1008,11 @@ Gw
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-xf-sfj">
                                 <rect key="frame" x="56" y="25" width="655" height="271"/>
                                 <clipView key="contentView" ambiguous="YES" id="koj-Rm-KFS">
-                                    <rect key="frame" x="1" y="0.0" width="595" height="270"/>
+                                    <rect key="frame" x="1" y="0.0" width="653" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" headerView="uCx-bm-zMD" viewBased="YES" id="74n-Ro-qgc">
-                                            <rect key="frame" x="0.0" y="0.0" width="653.5" height="247"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="653" height="247"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -1053,7 +1053,7 @@ Gw
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="answer_column" width="321.5" minWidth="40" maxWidth="1000" id="tRb-hX-r1p">
+                                                <tableColumn identifier="answer_column" width="321" minWidth="40" maxWidth="1000" id="tRb-hX-r1p">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Answers">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1109,7 +1109,7 @@ Gw
                                     <animations/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="uCx-bm-zMD">
-                                    <rect key="frame" x="0.0" y="0.0" width="653.5" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="653" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableHeaderView>
@@ -1575,7 +1575,7 @@ Gw
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Kbe-nq-buB">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
