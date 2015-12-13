@@ -12,6 +12,7 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
 
    
    
+    @IBOutlet weak var pvSet: NSPopUpButton!
     @IBOutlet weak var filecorrectlabel: NSTextField!
     @IBOutlet weak var fileNAME: NSTextField!
 
@@ -21,6 +22,8 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
     var user_file: String = ""
     var questions = [String]()
     var answers = [String]()
+    var sets = [QmSet]()
+
     @IBAction func fileSelect(sender: NSButton) {
         let myFileDialog = NSOpenPanel()
         myFileDialog.canChooseFiles = true
@@ -136,8 +139,13 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         generate_question_button.hidden = true
         filecorrectlabel.hidden = true
         scrollView.hidden = true
+        getSets()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reFetchSets", name: "refetchSetsKey", object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    func reFetchSets(){
+        getSets()
     }
    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -170,6 +178,61 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         tableView.reloadData()
         scrollView.hidden = false
     }
+    
+    /**
+    GetSets
+    Fetches user defined sets from server
+    **/
+    func getSets(){
+        sets.removeAll()
+        sets.append(QmSet(pid: 0, name: "NONE", topic: "", privat: "1", cr: 0))//always have 'NONE' as the first option
+        let send_this = "uid=\(UID)"
+        let request = getRequest(send_this, urlString: GET_SETS_PHP)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            (data, response, error) in  //all this happens once request has been completed, in another queue
+            if error != nil{
+                print("Error with creating login")
+                return
+            }
+            if let data = data{
+                do{
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data, options: [NSJSONReadingOptions.MutableContainers,NSJSONReadingOptions.AllowFragments]) as? NSArray{
+                        for dic in json{
+                            if case let id as String = dic["pid"]{
+                                if case let pname as String = dic["name"]{
+                                    if case let topic as String = dic["topic"]{
+                                        if case let priv as String = dic["private"]{
+                                            let temp = QmSet(pid: Int(id)!, name: pname, topic: topic, privat: priv,cr:UID)
+                                            self.sets.append(temp)
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.reload_pvSet()
+                    })
+                }
+                catch let e as NSError {
+                    print(e)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func reload_pvSet(){
+        pvSet.removeAllItems()
+        var strs : [String] = []
+        for i in sets
+        {
+            strs.append(i.name)
+        }
+        pvSet.addItemsWithTitles(strs)
+    }
+
     
     
     

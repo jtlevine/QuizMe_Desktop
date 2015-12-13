@@ -1008,7 +1008,7 @@ Gw
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-xf-sfj">
                                 <rect key="frame" x="85" y="25" width="597" height="271"/>
                                 <clipView key="contentView" ambiguous="YES" id="koj-Rm-KFS">
-                                    <rect key="frame" x="1" y="23" width="595" height="247"/>
+                                    <rect key="frame" x="1" y="0.0" width="595" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" headerView="uCx-bm-zMD" viewBased="YES" id="74n-Ro-qgc">
@@ -1099,11 +1099,11 @@ Gw
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="K4E-PY-9c2">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9Jb-o6-bLb">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="9Jb-o6-bLb">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -1114,6 +1114,50 @@ Gw
                                     <animations/>
                                 </tableHeaderView>
                             </scrollView>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsn-o9-W2g">
+                                <rect key="frame" x="283" y="337" width="128" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="OPQ-r2-C6x" id="8ze-2f-2wD">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="tBu-5l-HJi">
+                                        <items>
+                                            <menuItem state="on" id="OPQ-r2-C6x"/>
+                                            <menuItem title="Item 2" id="i2j-Yu-SU5"/>
+                                            <menuItem title="Item 3" id="gOc-ko-iCx"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHe-sS-1yK">
+                                <rect key="frame" x="241" y="344" width="28" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Set:" id="vSl-cF-laX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-TR-7UM">
+                                <rect key="frame" x="246" y="312" width="23" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OR" id="kKw-vi-898">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt8-VL-haQ">
+                                <rect key="frame" x="279" y="301" width="135" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Create New Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MdV-wI-al7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="1o0-L2-V1Q" kind="modal" id="UIE-Zd-uVs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                     </view>
@@ -1122,13 +1166,14 @@ Gw
                         <outlet property="filecorrectlabel" destination="Eqo-H5-Gra" id="Hou-Bl-O7L"/>
                         <outlet property="generate_question_button" destination="yBD-Dl-kLX" id="zJS-E6-qrZ"/>
                         <outlet property="process_file_button" destination="w5y-AT-rcP" id="8XP-Go-MYH"/>
+                        <outlet property="pvSet" destination="xsn-o9-W2g" id="FHK-KA-mq4"/>
                         <outlet property="scrollView" destination="Pgi-xf-sfj" id="c3M-fM-6Fw"/>
                         <outlet property="tableView" destination="74n-Ro-qgc" id="aMk-xk-nyC"/>
                     </connections>
                 </viewController>
                 <customObject id="0o9-7z-KQ7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882" y="1708.5"/>
+            <point key="canvasLocation" x="1860" y="1750.5"/>
         </scene>
         <!--Create LoginVC-->
         <scene sceneID="1K1-KQ-UF4">
@@ -1385,7 +1430,7 @@ Gw
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="E2Q-ki-kqJ">
-                                    <rect key="frame" x="1" y="203" width="478" height="16"/>
+                                    <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -1476,4 +1521,7 @@ Gw
             <point key="canvasLocation" x="17" y="1528"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UIE-Zd-uVs"/>
+    </inferredMetricsTieBreakers>
 </document>
