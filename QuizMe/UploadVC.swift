@@ -14,9 +14,10 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
    
     @IBOutlet weak var filecorrectlabel: NSTextField!
     @IBOutlet weak var fileNAME: NSTextField!
-    @IBOutlet weak var createButton: NSButton!
-    @IBAction func createbutton(sender: AnyObject) {
-    }
+
+    @IBOutlet weak var process_file_button: NSButton!
+ 
+    @IBOutlet weak var generate_question_button: NSButton!
     var user_file: String = ""
     var questions = [String]()
     var answers = [String]()
@@ -110,7 +111,7 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         }
         
         if (success){
-            createButton.hidden = false
+            generate_question_button.hidden = false
             filecorrectlabel.hidden = false
         }
         
@@ -128,9 +129,11 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         if res == NSAlertFirstButtonReturn {
         }
     }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createButton.hidden = true
+        generate_question_button.hidden = true
         filecorrectlabel.hidden = true
         scrollView.hidden = true
 
@@ -160,6 +163,7 @@ class UploadVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource{
         
     }
    
+    
     @IBOutlet weak var scrollView: NSScrollView!
 
     @IBAction func propagate(sender: AnyObject) {
