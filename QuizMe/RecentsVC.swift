@@ -263,13 +263,15 @@ class RecentsVC: NSViewController {
         let index = tvTable.selectedRow
         if(index >= 0){
             if(scTypeDisplayed.selectedSegment == 0){
-                print("question number ", index, "clicked")
                 let vc : SelectedCellVC = (self.storyboard?.instantiateControllerWithIdentifier("SelectedCell"))! as! SelectedCellVC
                 vc.question = questions[index]
+                vc.inSet = BoolWrapper(val: false)
                 self.view.window?.contentViewController = vc
             }
             else{
-                
+                let vc : SelectedSetCellVC = (self.storyboard?.instantiateControllerWithIdentifier("SelectedSetCell"))! as! SelectedSetCellVC
+                vc.set = sets[index]
+                self.view.window?.contentViewController = vc
             }
         }
     }

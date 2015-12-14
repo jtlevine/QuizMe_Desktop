@@ -25,6 +25,7 @@ let DELETE_QUESTION_PHP = "\(EXTERNAL_IP)/QuizMe/deleteQuestion.php"
 let GET_SETS_PHP = "\(EXTERNAL_IP)/QuizMe/getSets.php"
 let CREATE_SET_PHP = "\(EXTERNAL_IP)/QuizMe/createSet.php"
 let DELETE_SET_PHP = "\(EXTERNAL_IP)/QuizMe/deleteSet.php"
+let GET_QUESTIONS_FROM_SET_PHP = "\(EXTERNAL_IP)/QuizMe/getQuestionsFromSet.php"
 
 var UID = 0
 var DEVICE_TOKEN = ""

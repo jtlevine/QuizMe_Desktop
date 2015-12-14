@@ -1514,7 +1514,7 @@ Gw
         <!--Selected Set CellVC-->
         <scene sceneID="iDY-du-caM">
             <objects>
-                <viewController id="fv1-0r-z6t" customClass="SelectedSetCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedSetCell" id="fv1-0r-z6t" customClass="SelectedSetCellVC" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="3Ia-Jz-Xzg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1551,7 +1551,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mOq-Ay-LDN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="474" height="17"/>
                                                                     <animations/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="J1Z-hx-vLL">
                                                                         <font key="font" metaFont="system"/>
@@ -1568,6 +1568,11 @@ Gw
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <action trigger="doubleAction" selector="tvTable_onDoubleClick:" target="fv1-0r-z6t" id="33X-1L-RHc"/>
+                                                <outlet property="dataSource" destination="fv1-0r-z6t" id="niC-BM-bBH"/>
+                                                <outlet property="delegate" destination="fv1-0r-z6t" id="0Ca-nu-UJo"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                     <animations/>
@@ -1585,7 +1590,7 @@ Gw
                                     <animations/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eum-aN-zRd" customClass="Selected">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eum-aN-zRd">
                                 <rect key="frame" x="14" y="229" width="81" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OKa-U1-Jid">
@@ -1619,7 +1624,7 @@ Gw
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-qa-FnR">
                                 <rect key="frame" x="90" y="121" width="301" height="90"/>
                                 <animations/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6sf-eA-Jtn">
+                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6sf-eA-Jtn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

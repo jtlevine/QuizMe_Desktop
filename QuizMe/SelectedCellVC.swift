@@ -15,6 +15,7 @@ class SelectedCellVC: NSViewController {
     var answerTemp = ""
     var state = "q"
     var inSet : BoolWrapper?
+    var set : QmSet?
     
     @IBOutlet weak var btFlip: NSButton!
     @IBOutlet weak var btBack: NSButton!
@@ -45,7 +46,14 @@ class SelectedCellVC: NSViewController {
     }
     
     @IBAction func btBack_onClick(sender: NSButton) {
-        let vc : NSViewController = (self.storyboard?.instantiateControllerWithIdentifier("Recents"))! as! NSViewController
-        self.view.window?.contentViewController = vc
+        if(inSet?.value == true){
+            let vc : SelectedSetCellVC = (self.storyboard?.instantiateControllerWithIdentifier("SelectedSetCell"))! as! SelectedSetCellVC
+            vc.set = set
+            self.view.window?.contentViewController = vc
+        }
+        else{
+            let vc : NSViewController = (self.storyboard?.instantiateControllerWithIdentifier("Recents"))! as! NSViewController
+            self.view.window?.contentViewController = vc
+        }
     }
 }
